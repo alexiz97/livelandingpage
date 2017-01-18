@@ -1,0 +1,18 @@
+#sortable{
+    margin-top: 80px;
+}
+.download{
+    width: 80%;
+    height: 120px;
+    background-color: #2196F3;
+}
+.features{
+    width: 80%;
+    height: 120px;
+    background-color: #CDDC39;
+}
+.contact{
+    width: 80%;
+    height: 120px;
+    background-color: #FF9800;
+}
