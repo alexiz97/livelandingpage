@@ -1,18 +1,66 @@
-#sortable{
+@font-face {
+    font-family: montserratR;
+    src: url(Montserrat-Regular.otf);
+}
+@font-face {
+    font-family: montserratT;
+    src: url(Montserrat-Thin.otf);
+}
+@font-face {
+    font-family: istok;
+    src: url(IstokWeb-Regular.ttf);
+}
+#content{
     margin-top: 80px;
 }
-.download{
-    width: 80%;
-    height: 120px;
+.element{
+    width: 100%;
+}
+.home{
     background-color: #2196F3;
+    height: 900px;
+}
+.about{
+    background-color: #CDDC39;
+    height: 500px;
 }
 .features{
-    width: 80%;
-    height: 120px;
-    background-color: #CDDC39;
+    background-color: #FF9800;
+    height: 200px;
 }
 .contact{
-    width: 80%;
-    height: 120px;
-    background-color: #FF9800;
+    background-color: #ffd600;
+    height: 300px
+}
+.movableContener{
+    margin-top: 50px;
+}
+.content-table{
+    width: 100%;
+}
+.feature-icon{
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border: solid 3px #CDDC39;
+    border-radius: 50%;
+    background-color: whitesmoke;
+}
+.navi{
+    height: 100px !important;
+}
+
+.home-title{
+    margin: auto;
+    font-size: 50px;
+    font-family: montserratR;
+    color: whitesmoke;
+}
+.handler{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 2%;
+    height: 2%;
+    background-color: whitesmoke;
 }

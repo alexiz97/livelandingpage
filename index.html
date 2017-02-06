@@ -9,13 +9,14 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='css/bootstrap.min.css' rel='stylesheet' />
-        <link href='css/main.css' rel='stylesheet' />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/liveland.js"></script>
+        <script src="js/tileMove.js"></script>
+        <script src="js/ckeditor/ckeditor.js"></script>
+        <link href='css/main.css' rel='stylesheet' />
+        <link href='css/bootstrap.min.css' rel='stylesheet' />
     </head>
     <body>
         <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
@@ -26,7 +27,7 @@ and open the template in the editor.
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse navi" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a class="page-scroll" href="#download">Download</a>
@@ -52,12 +53,73 @@ and open the template in the editor.
             </div>
         </div>
     </header>
-    <div  id="content">
+    <div  class="movableContener">
+        <table class="content-table">
+        <tbody>
+                <tr class="movable" id="downloadtr">
+                <td>
+    <section id='home' class='element home'>
+        <div class="handler"></div>
+                <div class='container'>
+                    <div class='row' style="margin-top: 15%;">
+                        <div class='col-md-5'>
+                            <textarea class="ckeditor" id="editor1">Content 1</textarea>
+                        </div>
+                        <div class='col-md-7'>
+                            <textarea class="ckeditor" id="editor2">Content 2</textarea>
+                        </div>
+                    </div>
+                </div>
+    </section>
+                </td>
+                </tr>
+                <tr class="movable" id="featurestr">
+                <td>
+    <section id='about' class='element about'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12 text-center'>
+                <textarea class="ckeditor" id="editor3">About</textarea>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-4'>
+                </div>
+                <div class='col-md-8'>
+                </div>
+            </div>
+        </div>
+    </section>
+                    </td>
+                    </tr>
+                <tr class="movable" id="contacttr">
+                <td>
+    <section id='features' class='element features'>
+        <div class='row'>
+        <div class="col-xs-6 col-sm-3"><textarea class="ckeditor" id="editor4">FEATURE 1</textarea><div class="feature-icon"></div></div>
+        <div class="col-xs-6 col-sm-3"><textarea class="ckeditor" id="editor5">FEATURE 2</textarea><div class="feature-icon"></div></div>
+        <div class="col-xs-6 col-sm-3"><textarea class="ckeditor" id="editor6">FEATURE 3</textarea><div class="feature-icon"></div></div>
+        <div class="col-xs-6 col-sm-3"><textarea class="ckeditor" id="editor7">FEATURE 4</textarea><div class="feature-icon"></div></div>
+        </div>
+    </section>
+                    </td>
+                    </tr>
+                                    <tr class="movable" id="contacttr">
+                <td>
+    <section id='contact' class='element contact'>
+        <div class='container'>
+        <textarea class="ckeditor" id="editor8">Contact</textarea>
+        </div>
+    </section>
+                    </td>
+                    </tr>
+        </tbody>
+        </table>
     </div>
-
     <footer>
         <div class="container">
         </div>
     </footer>
+        <script src="js/liveland.js"></script>
     </body>
 </html>
