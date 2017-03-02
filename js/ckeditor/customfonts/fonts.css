@@ -1,0 +1,10 @@
+@font-face {  
+   font-family: "MontserratRegular";  
+   src: url(Montserrat-Regular.otf); /* IE */  
+   src: local("Montserrat-Regular.otf"), url("Montserrat-Regular.otf") format("opentype"); /*non-IE*/  
+}
+@font-face {  
+   font-family: "IstokWebRegular";  
+   src: url(IstokWeb-Regular.ttf); /* IE */  
+   src: local("IstokWeb-Regular.ttf"), url("IstokWeb-Regular.ttf") format("truetype"); /*non-IE*/  
+}

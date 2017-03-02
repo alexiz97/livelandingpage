@@ -11,33 +11,34 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/tileMove.js"></script>
         <script src="js/ckeditor/ckeditor.js"></script>
         <link href='css/main.css' rel='stylesheet' />
         <link href='css/bootstrap.min.css' rel='stylesheet' />
+        <link href="css/grideditor.css" rel="stylesheet">  
+        <script src="js/jquery.grideditor.js"></script> 
+        <script>CKEDITOR.dtd.$removeEmpty['span'] = false;</script>
     </head>
     <body>
+        <div class="admpanel">
+            <div class="admlabel"><p>Panel administracyjny</p></div>
+            <div id="addElement" class="addelement"><p>Dodaj element</p></div>
+        </div>
+        <div id="content" class="content">
         <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll navbar-mystyle" href="#page-top"><textarea class="ckeditor" id="editor9">Nazwa projektu</textarea></a>
             </div>
             <div class="collapse navbar-collapse navi" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#download">Download</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#features">Features</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                <ul id="aj-fill" class="nav navbar-nav navbar-right">
                 </ul>
             </div>
         </div>
@@ -55,13 +56,13 @@ and open the template in the editor.
     </header>
     <div  class="movableContener">
         <table class="content-table">
-        <tbody>
-                <tr class="movable" id="downloadtr">
+        <tbody id="section-content">
+                <tr class="movable" id="home">
                 <td>
-    <section id='home' class='element home'>
+    <section id='sec-home' class='element home'>
         <div class="handler"></div>
-                <div class='container'>
-                    <div class='row' style="margin-top: 15%;">
+                <div class='container home_container'>
+                    <div class='row'>
                         <div class='col-md-5'>
                             <textarea class="ckeditor" id="editor1">Content 1</textarea>
                         </div>
@@ -73,46 +74,50 @@ and open the template in the editor.
     </section>
                 </td>
                 </tr>
-                <tr class="movable" id="featurestr">
+                <tr class="movable" id="about">
                 <td>
-    <section id='about' class='element about'>
+    <section id='sec-about' class='element about'>
+        <div class="handler"></div>
         <div class='container'>
             <div class='row'>
                 <div class='col-lg-12 text-center'>
                 <textarea class="ckeditor" id="editor3">About</textarea>
                 </div>
             </div>
+        </div>
+    </section>
+                    </td>
+                    </tr>
+                <tr class="movable" id="features">
+                <td>
+    <section id='sec-features' class='element features'>
+        <div class="handler"></div>
+        <div class='row'>
+            <div class="col-xs-6 col-sm-3 margin"><textarea class="ckeditor" id="editor4">FEATURE 1</textarea><div class="feature-icon"><div class="center"><textarea class="ckeditor" id="editor10">ico</textarea></div></div></div>
+        <div class="col-xs-6 col-sm-3 margin"><textarea class="ckeditor" id="editor5">FEATURE 2</textarea><div class="feature-icon"><div class="center"><textarea class="ckeditor" id="editor11">ico</textarea></div></div></div>
+        <div class="col-xs-6 col-sm-3 margin"><textarea class="ckeditor" id="editor6">FEATURE 3</textarea><div class="feature-icon"><div class="center"><textarea class="ckeditor" id="editor12">ico</textarea></div></div></div>
+        <div class="col-xs-6 col-sm-3 margin"><textarea class="ckeditor" id="editor7">FEATURE 4</textarea><div class="feature-icon"><div class="center"><textarea class="ckeditor" id="editor13">ico</textarea></div></div></div>
+        </div>
+    </section>
+                    </td>
+                    </tr>
+                <tr class="movable" id="contact">
+                <td>
+    <section id='sec-contact' class='element contact'>
+        <div class="handler"></div>
+        <div class='container'>
             <div class='row'>
-                <div class='col-md-4'>
-                </div>
                 <div class='col-md-8'>
+                    <textarea class="ckeditor" id="editor8">Contact</textarea>
+                </div>
+                <div class='col-md-4'>
+                    <textarea class="ckeditor" id="editor14">Contact</textarea>
                 </div>
             </div>
         </div>
     </section>
-                    </td>
-                    </tr>
-                <tr class="movable" id="contacttr">
-                <td>
-    <section id='features' class='element features'>
-        <div class='row'>
-        <div class="col-xs-6 col-sm-3"><textarea class="ckeditor" id="editor4">FEATURE 1</textarea><div class="feature-icon"></div></div>
-        <div class="col-xs-6 col-sm-3"><textarea class="ckeditor" id="editor5">FEATURE 2</textarea><div class="feature-icon"></div></div>
-        <div class="col-xs-6 col-sm-3"><textarea class="ckeditor" id="editor6">FEATURE 3</textarea><div class="feature-icon"></div></div>
-        <div class="col-xs-6 col-sm-3"><textarea class="ckeditor" id="editor7">FEATURE 4</textarea><div class="feature-icon"></div></div>
-        </div>
-    </section>
-                    </td>
-                    </tr>
-                                    <tr class="movable" id="contacttr">
-                <td>
-    <section id='contact' class='element contact'>
-        <div class='container'>
-        <textarea class="ckeditor" id="editor8">Contact</textarea>
-        </div>
-    </section>
-                    </td>
-                    </tr>
+                </td>
+                </tr>
         </tbody>
         </table>
     </div>
@@ -121,5 +126,26 @@ and open the template in the editor.
         </div>
     </footer>
         <script src="js/liveland.js"></script>
+    </div>
     </body>
+<div id="elementCreator" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Dodaj element</h4>
+      </div>
+        <div class="modal-body">
+            <input type="text" id="identity" value="" placeholder="Wpisz nazwę sekcji.."/>
+            <p>Układ zawartości:</p>
+            <div id="myGrid">
+            </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel">Anuluj</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" id="add">Dodaj</button>
+      </div>
+    </div>
+  </div>
+</div>
 </html>
