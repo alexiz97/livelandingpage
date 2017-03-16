@@ -10,4 +10,5 @@ config.font_names = 'Montserrat Regular/MontserratRegular;Istok Web Regular/Isto
 config.extraPlugins = 'fontawesome';
 config.contentsCss = 'js\ckeditor\plugins\fontawesome\font-awesome\css\font-awesome.min.css';
 config.allowedContent = true; 
+config.removePlugins = 'uploadimage';
 };

@@ -17,18 +17,42 @@ and open the template in the editor.
         <script src="js/bootstrap.min.js"></script>
         <script src="js/tileMove.js"></script>
         <script src="js/ckeditor/ckeditor.js"></script>
+        <script src="js/bootstrap-colorpicker.min.js"></script>
         <link href='css/main.css' rel='stylesheet' />
         <link href='css/bootstrap.min.css' rel='stylesheet' />
-        <link href="css/grideditor.css" rel="stylesheet">  
-        <script src="js/jquery.grideditor.js"></script> 
+        <link href='css/bootstrap-colorpicker.min.css' rel='stylesheet' />
+        <link href="css/grideditor.css" rel="stylesheet">
+        <script src="js/jquery.grideditor.js"></script>
+        <script src="js/jquery.fileDownload.js"></script>
         <script>CKEDITOR.dtd.$removeEmpty['span'] = false;</script>
     </head>
     <body>
-        <div class="admpanel">
-            <div class="admlabel"><p>Panel administracyjny</p></div>
+        <div class="tounwrap" id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top todelete" id="sidebar-wrapper" role="navigation">
+<!--            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                       Panel Administracyjny
+                    </a>
+                </li>
+            </ul>-->
+
+            <div class="row topnav">
+            <div class="sidebar-brand"><p class="title">Panel Administracyjny</p></div>
+            <div id="action" class="icon i1 default"><span class="glyphicons glyphicons-refresh"></span></div>
+            <div id="action" class="icon i2"><span class="glyphicons glyphicons-refresh"></span></div>
+            <div id="action" class="icon i3"><span class="glyphicons glyphicons-refresh"></span></div>
+            <div id="action" class="icon i4"><span class="glyphicons glyphicons-refresh"></span></div>
+            </div>
+            <div style="position: relative; height: 100%;"><ul id="editElements" class="nav sidebar-nav hiding"></ul></div>
             <div id="addElement" class="addelement"><p>Dodaj element</p></div>
-        </div>
-        <div id="content" class="content">
+        </nav>
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed todelete" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+            </button>
         <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -42,93 +66,18 @@ and open the template in the editor.
                 </ul>
             </div>
         </div>
-    </nav>
+        </nav>
 
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7">
-                </div>
-                <div class="col-sm-5">
-                </div>
-            </div>
+        <div  class="movableContener">
+            <table class="content-table">
+            <tbody id="section-content">
+            </tbody>
+            </table>
         </div>
-    </header>
-    <div  class="movableContener">
-        <table class="content-table">
-        <tbody id="section-content">
-                <tr class="movable" id="home">
-                <td>
-    <section id='sec-home' class='element home'>
-        <div class="handler"></div>
-                <div class='container home_container'>
-                    <div class='row'>
-                        <div class='col-md-5'>
-                            <textarea class="ckeditor" id="editor1">Content 1</textarea>
-                        </div>
-                        <div class='col-md-7'>
-                            <textarea class="ckeditor" id="editor2">Content 2</textarea>
-                        </div>
-                    </div>
-                </div>
-    </section>
-                </td>
-                </tr>
-                <tr class="movable" id="about">
-                <td>
-    <section id='sec-about' class='element about'>
-        <div class="handler"></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12 text-center'>
-                <textarea class="ckeditor" id="editor3">About</textarea>
-                </div>
-            </div>
         </div>
-    </section>
-                    </td>
-                    </tr>
-                <tr class="movable" id="features">
-                <td>
-    <section id='sec-features' class='element features'>
-        <div class="handler"></div>
-        <div class='row'>
-            <div class="col-xs-6 col-sm-3 margin"><textarea class="ckeditor" id="editor4">FEATURE 1</textarea><div class="feature-icon"><div class="center"><textarea class="ckeditor" id="editor10">ico</textarea></div></div></div>
-        <div class="col-xs-6 col-sm-3 margin"><textarea class="ckeditor" id="editor5">FEATURE 2</textarea><div class="feature-icon"><div class="center"><textarea class="ckeditor" id="editor11">ico</textarea></div></div></div>
-        <div class="col-xs-6 col-sm-3 margin"><textarea class="ckeditor" id="editor6">FEATURE 3</textarea><div class="feature-icon"><div class="center"><textarea class="ckeditor" id="editor12">ico</textarea></div></div></div>
-        <div class="col-xs-6 col-sm-3 margin"><textarea class="ckeditor" id="editor7">FEATURE 4</textarea><div class="feature-icon"><div class="center"><textarea class="ckeditor" id="editor13">ico</textarea></div></div></div>
         </div>
-    </section>
-                    </td>
-                    </tr>
-                <tr class="movable" id="contact">
-                <td>
-    <section id='sec-contact' class='element contact'>
-        <div class="handler"></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-md-8'>
-                    <textarea class="ckeditor" id="editor8">Contact</textarea>
-                </div>
-                <div class='col-md-4'>
-                    <textarea class="ckeditor" id="editor14">Contact</textarea>
-                </div>
-            </div>
-        </div>
-    </section>
-                </td>
-                </tr>
-        </tbody>
-        </table>
-    </div>
-    <footer>
-        <div class="container">
-        </div>
-    </footer>
-        <script src="js/liveland.js"></script>
-    </div>
     </body>
-<div id="elementCreator" class="modal fade" role="dialog">
+<div id="elementCreator" class="modal fade todelete" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

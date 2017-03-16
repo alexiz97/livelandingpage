@@ -170,24 +170,24 @@ var trigger = $('.hamburger'),
      isClosed = false;
 
     trigger.click(function () {
-      hamburger_cross();
+      hamburger_cross();      
     });
 
     function hamburger_cross() {
 
-      if (isClosed == true) {
+      if (isClosed == true) {          
         overlay.hide();
         trigger.removeClass('is-open');
         trigger.addClass('is-closed');
         isClosed = false;
-      } else {
+      } else {   
         overlay.show();
         trigger.removeClass('is-closed');
         trigger.addClass('is-open');
         isClosed = true;
       }
   }
-
+  
   $('[data-toggle="offcanvas"]').click(function () {
         $('#wrapper').toggleClass('toggled');
   });
@@ -221,10 +221,10 @@ $(".movableContener tbody").sortable({
                 refreshMenu();
         }
 });
-
+        
 function load(){
     var targets = CKEDITOR.document.find( '.ckeditor' );
-
+    
     for ( i = 0; i < targets.count(); i++ ){
         tar = targets.$[i].id;
             console.log(tar);
@@ -241,25 +241,25 @@ function load(){
 
 function loadCustom(){
    if (typeof localStorage["cObElements"] === 'undefined' && localStorage["cObElements"] !== null){
-
+       
         }
         else{
             console.log(localStorage["cObElements"]);
             var cElements = JSON.parse(localStorage["cObElements"]);
             console.log(cElements);
-            for (l = 0; l <= cElements[0].length - 1; l++) {
+            for (l = 0; l <= cElements[0].length - 1; l++) {          
             content = cElements[1][l];
             $( "#section-content" ).append( $( content ) );
         }
     }
     if (typeof localStorage["cObStyle"] === 'undefined' && localStorage["cObStyle"] !== null){
-
+       
         }
         else{
             console.log(localStorage["cObStyle"]);
             var cObStyle = JSON.parse(localStorage["cObStyle"]);
             console.log(cObStyle);
-            for (l = 0; l <= cObStyle[0].length - 1; l++) {
+            for (l = 0; l <= cObStyle[0].length - 1; l++) {          
             id = cObStyle[0][l];
             color = cObStyle[1][l];
             $("#sec-"+id+"").css('backgroundImage', color);
@@ -312,12 +312,12 @@ CKEDITOR.on( 'instanceReady', function( event ) {
     event.editor.on( 'focus', function() {
         tar = this.name;
         CKEDITOR.instances[tar].on('blur', function() {
-        var data = CKEDITOR.instances[tar].getData();
+        var data = CKEDITOR.instances[tar].getData(); 
          localStorage[tar] = data;
         });
     });
 });
-
+      
 $("#addElement").click(function(){
     $('#elementCreator').modal('show');
 });
@@ -344,7 +344,7 @@ $(".default").click(function(){
     buildlayoutKey();
     refreshMenu();
     });
-
+    
 $("#editElements").on('click','.edit', function() {
     id = $(this).attr('editid');
     console.log(id);
@@ -360,7 +360,7 @@ $("#editElements").on('click','.edit', function() {
           <label for="img-url">Adres obrazu tła:</label> <input type="text" class="form-control" id="img-url"> \n\
          </div>\n\
         </div>\n\
-       </div>').appendTo($('.navbar'));
+       </div>').appendTo($('.navbar'));   
     id = $(this).attr('editid');
     var img = $("#sec-"+id+"").css('background-image');
     if (img !== 'none'){
@@ -379,7 +379,7 @@ $("#editElements").on('click','.edit', function() {
     var srcWidth = $src.width();
     $src.css({position: 'absolute'});
     $tgt.hide().appendTo($parent).css({left: width, position: 'absolute'});
-
+    
     $src.animate({left : -width}, 500, function(){
         $src.hide();
         $src.css({left: null, position: null});
@@ -395,18 +395,18 @@ $("#editElements").on('click','.edit', function() {
     console.log(img);
     color = $('#cp2').colorpicker('getValue');
     console.log(color);
-    $("#sec-"+id+"").css('backgroundImage', 'linear-gradient(to bottom, '+color+', '+color+'), url("'+img+'")');
-    });
+    $("#sec-"+id+"").css('backgroundImage', 'linear-gradient(to bottom, '+color+', '+color+'), url("'+img+'")'); 
+    }); 
     $('#cp2').colorpicker({ color: color, format: 'rgba' }).on('changeColor', function(e) {
         color = e.color.toString('rgba');
-            $("#sec-"+id+"").css('backgroundImage', 'linear-gradient(to bottom, '+color+', '+color+'), url("'+img+'")');
+            $("#sec-"+id+"").css('backgroundImage', 'linear-gradient(to bottom, '+color+', '+color+'), url("'+img+'")'); 
     });
 //    $('#colorpicker').val(color);
 //    $( ".hiding" ).toggle("slide", {direction:'left'});
 //    $( "#editorr" ).show("slide", {direction:'right'});
-    });
+    }); 
 function closeEdit(){
-  $('#cp2').colorpicker('destroy');
+  $('#cp2').colorpicker('destroy');   
     $tgt = $( ".hiding" );
     $src = $( "#editorr" );
     var $parent = $src.parent();
@@ -414,19 +414,19 @@ function closeEdit(){
     var srcWidth = $src.width();
     $src.css({position: 'absolute'});
     $tgt.hide().appendTo($parent).css({left: width, position: 'absolute'});
-
+    
     $src.animate({left : -width}, 500, function(){
         $src.hide();
         $src.css({left: null, position: null});
     });
     $tgt.show().animate({left: 0}, 500, function(){
         $tgt.css({left: null, position: null});
-    });
+    }); 
     $('#editorr').delete;
 };
 var cObStyle = JSON.parse(localStorage["cObStyle"]);
     console.log(cObStyle);
-$(document).on('click', '#edit-back', function(){
+$(document).on('click', '#edit-back', function(){ 
     id = $('#edit-back').attr('elementid');
     color = $("#sec-"+id+"").css('backgroundImage');
     var cObStyle = JSON.parse(localStorage["cObStyle"]);
@@ -447,7 +447,7 @@ $(document).on('click', '#edit-back', function(){
     closeEdit();
 //    $( ".hiding" ).toggle("slide", {direction:'left'});
 //    $( "#editorr" ).show("slide", {direction:'right'});
-    });
+    }); 
 
 
 // Get resulting html
@@ -490,7 +490,7 @@ $(".i4").click(function(ev){
     $('.tounwrap').unwrap();
     $('.cke').remove();
     $('.cke_screen_reader_only').remove();
-    var targets = CKEDITOR.document.find( '.ckeditor' );
+    var targets = CKEDITOR.document.find( '.ckeditor' );   
     for ( i = 0; i < targets.count(); i++ ){
         tar = targets.$[i].id;
         data = CKEDITOR.instances[tar].getData();
@@ -504,9 +504,13 @@ $(".i4").click(function(ev){
 		url: 'ajax/save.php',
 		data: {body:body},
 		type: 'POST',
-		success: function(res){
-      $.fileDownload(res);
+		success: function(){
 		}
 	});
 });
-});
+}); 
+
+
+
+
+

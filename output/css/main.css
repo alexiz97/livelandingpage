@@ -304,6 +304,9 @@ dropdown-toggle:hover {
     bottom: 0;
     z-index: 1;
 }
+.feature-icon > p > span > span{
+    line-height: 115px;
+}
 .icon{
     background: #272727;
     width: 25%;
@@ -390,7 +393,6 @@ dropdown-toggle:hover {
     width: 100%;
 }
 .feature-icon{
-    line-height: 114px;
     margin: auto;
     width: 120px;
     height: 120px;
